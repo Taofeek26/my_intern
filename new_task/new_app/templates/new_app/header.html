@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrat@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+    <body>
+
+            <div>
+                {% if user.is_authenticated %}
+                <p><h2>
+                Welcome, to my site {{user.first_name}}, Kindly logout
+                <a href="/logout">here</a>  if you are done
+                {% else %}</h2></P>
+                <P><h2> You are logged out kindly login<a  href="/login"> here </a>if you have already created an account</h2></P>
+                {% endif %}
+            </div>
+
+    {% block content %}
+
+    {% endblock %}
+
+    </body>
+</html>

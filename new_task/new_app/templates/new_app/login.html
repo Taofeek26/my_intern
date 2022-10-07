@@ -1,0 +1,12 @@
+{% extends 'new_app/header.html' %}
+
+{% block content %}
+
+<form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">LOGIN</button>
+    </form>
+
+    <p><h2>Dont have an account ?, <a href="/register"> Create an Account</h2></p>
+{% endblock %}
