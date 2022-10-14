@@ -1,0 +1,65 @@
+<!--templates/home.html-->
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+{% if user.user_type == 'DOC' %}
+
+<a href="{% url "add-blog" %}">Add Blog</a>
+<h3 class="mt-2">Latest Blog</h3>
+<div class="col-md-8 mt-3">
+    {% for Blog in Blogs %}
+    <div class="card">
+        <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p><h2>{{Blog.title}}</h2></p>
+            <P>{{Blog.image}}</P>
+            <div id="main">
+                <div id = "app"></div>
+                <p>
+                    <script type="text/javascript">
+                        var summary = '{{Blog.summary}}';
+                        var split = summary.split(" ");
+                        var sli = split.slice(0, 16);
+                        var joint = sli.join(" ")
+                        document.write(joint);
+                    </script><small>....<a href="Blog" >&nbsp;readmore &rarr;</a></small>
+                </p>
+            </div>
+            <footer class="blockquote-footer"><small><h3> in {{Blog.category}}</h3> </a></small></footer>
+        </blockquote>
+        </div>
+        {% endfor %}
+    </div>
+
+{% else %}
+<h3 class="mt-2">Latest Blog</h3>
+<div class="col-md-8 mt-3">
+    {% for Blog in Blogs %}
+    <div class="card">
+        <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p><h2>{{Blog.title}}</h2></p>
+            <P>{{Blog.image}}</P>
+            <div id="main">
+                <div id = "app"></div>
+                <p>
+                    <script type="text/javascript">
+                        var summary = '{{Blog.summary}}';
+                        var split = summary.split(" ");
+                        var sli = split.slice(0, 16);
+                        var joint = sli.join(" ")
+                        document.write(joint);
+                    </script><small>....<a href="Blog" >&nbsp;readmore &rarr;</a></small>
+                </p>
+            </div>
+            <footer class="blockquote-footer"><small><h3> in {{Blog.category}}</h3> </a></small></footer>
+        </blockquote>
+        </div>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,15 @@
+<!--templates/blog.html-->
+{% extends 'base.html' %}
+{% block content %}
+{% for Blog in Blogs %}
+<div class="card mb-3">
+    <div class="card-body">
+
+      <h1 class="card-title">{{Blog.title}}</h1>
+      <p class="card-text">{{Blog.content}}</p>
+
+    </div>
+    </div>
+  </div>
+{% endfor %}
+{% endblock %}
