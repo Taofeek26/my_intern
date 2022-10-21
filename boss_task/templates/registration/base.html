@@ -1,0 +1,21 @@
+<!doctype  html>
+<html  lang="en">
+<head>
+  <title>My site </title>
+  {% load static %}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet"  type="text/css" href="{% static 'css/index.css' %}"/>
+</head>
+<body>
+  <div  class="container">
+    <div  class="row justify-content-center">
+      <div  class="col-4">
+        <h2 class="text-center">My site</h2>
+      {% block content %}
+
+      {% endblock %}
+      </div>
+    </div>
+  </div>
+</body>
+</html>
